@@ -1,0 +1,52 @@
+
+import React from 'react';
+import { Screen } from '../types';
+
+interface Props {
+  onNavigate: (screen: Screen) => void;
+}
+
+const ContactScreen: React.FC<Props> = ({ onNavigate }) => {
+  return (
+    <div className="flex flex-col h-full bg-background-dark text-white overflow-hidden relative">
+      <header className="px-6 pt-12 pb-4">
+        <div className="flex items-center justify-between mb-8">
+          <button 
+            onClick={() => onNavigate('HOME')}
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-zinc-800 hover:bg-zinc-900 transition-colors"
+          >
+            <span className="material-symbols-outlined">arrow_back_ios_new</span>
+          </button>
+          <div className="text-[10px] tracking-widest font-bold opacity-60 uppercase">.edsy</div>
+          <div className="w-10"></div>
+        </div>
+        <h1 className="text-5xl font-light leading-tight tracking-tight mb-2">
+          Contact <br/>
+          <span className="font-medium">Support</span>
+        </h1>
+        <p className="text-slate-400 text-sm mt-4">We're here to help you with your learning journey.</p>
+      </header>
+
+      <main className="flex-1 px-6 pt-8">
+        <div className="bg-zinc-900/50 border border-white/5 rounded-[32px] p-8">
+          <p className="text-slate-300 leading-relaxed mb-8">
+            If you have any questions, feedback, or need assistance with your courses, please don't hesitate to reach out to our team. We aim to respond to all inquiries as quickly as possible.
+          </p>
+          
+          <div className="space-y-2">
+            <h3 className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Email Address</h3>
+            <p className="text-xl font-medium text-primary selection:bg-primary/20">
+              forfarzivada@gmail.com
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer className="p-8 text-center">
+        <p className="text-[10px] text-zinc-600 uppercase tracking-[0.2em]">Edsy Learning Platform</p>
+      </footer>
+    </div>
+  );
+};
+
+export default ContactScreen;
