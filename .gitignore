@@ -22,3 +22,21 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build output
+dist/
+dist-ssr/
+
+# Caches
+.cache/
+.upm/
+.local/
+
+# Replit
+.replit
+replit.nix
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
