@@ -40,3 +40,5 @@ replit.nix
 .vscode/
 .idea/
 .DS_Store
+#zip files
+*.zip
