@@ -177,7 +177,7 @@ const App: React.FC = () => {
             <Route path="/terms" element={<TermsScreen onNavigate={setCurrentScreen} />} />
             <Route path="/refund" element={<RefundScreen onNavigate={setCurrentScreen} />} />
             <Route path="/contact" element={<ContactScreen onNavigate={setCurrentScreen} />} />
-            <Route path="*" element={renderScreen()} />
+            <Route path="*" element={<>{renderScreen()}</>} />
           </Routes>
         </div>
       </div>
