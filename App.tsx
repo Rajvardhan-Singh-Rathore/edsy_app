@@ -37,10 +37,10 @@ const NavigationHandler: React.FC<{
 };
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const loader = document.getElementById("app-loader");
-    if (loader) loader.remove();
-  }, []);
+  // useEffect(() => {
+  //   const loader = document.getElementById("app-loader");
+  //   if (loader) loader.remove();
+  // }, []);
   
   const [currentScreen, setCurrentScreen] = useState<Screen>('LOGIN');
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
