@@ -2,27 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 
-const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
-}
+const MIN_LOADER_TIME = 2500; 
 
-function hideLoader() {
-  const loader = document.getElementById('app-loader');
-  if (loader) {
-    loader.style.opacity = '0';
-    loader.style.pointerEvents = 'none';
-    setTimeout(() => loader.remove(), 300);
+const startTime = Date.now();
+
+const mountApp = () => {
+  const rootElement = document.getElementById('root');
+  if (!rootElement) {
+    throw new Error("Could not find root element");
   }
-}
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+};
 
-requestAnimationFrame(() => {
-  hideLoader();
-});
+const elapsed = Date.now() - startTime;
+const remaining = Math.max(0, MIN_LOADER_TIME - elapsed);
+
+setTimeout(mountApp, remaining);

@@ -41,6 +41,15 @@ const App: React.FC = () => {
   //   const loader = document.getElementById("app-loader");
   //   if (loader) loader.remove();
   // }, []);
+
+  useEffect(() => {
+  const loader = document.getElementById("app-loader");
+  if (loader) {
+    loader.classList.add("opacity-0");
+    setTimeout(() => loader.remove(), 500); // smooth fade
+  }
+}, []);
+
   
   const [currentScreen, setCurrentScreen] = useState<Screen>('LOGIN');
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
